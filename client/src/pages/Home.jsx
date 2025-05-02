@@ -17,7 +17,6 @@ const Home = () => {
     useEffect(() => {
         const fetchJobs = async () => {
             setLoading(true);
-            console.log("API_BASE_URL:", API_BASE_URL);
             try {
                 const res = await axios.get(`${API_BASE_URL}/api/v1/jobs/getAllJobs`);
                 const jobData = res?.data?.jobs || [];
@@ -42,7 +41,9 @@ const Home = () => {
             );
             const locationJobs = res?.data?.jobs || [];
             setFilteredJobs(locationJobs);
-            setSelectedJob(null);
+            if (window.innerWidth >= 768) {
+                setSelectedJob(locationJobs[0] || null);
+            }
         } catch (error) {
             console.error("Error filtering jobs:", error);
         }
