@@ -43,6 +43,12 @@ A full-stack Job Listing application built using the MERN stack. This app allows
 
 ---
 
+## 📸 UI Screenshot
+
+![Screenshot](https://github.com/user-attachments/assets/5a92f895-af82-479d-b22e-c9fed51bb15d)
+
+---
+
 ## 💻 Steps to Run the Project Locally
 
 ### Prerequisites
