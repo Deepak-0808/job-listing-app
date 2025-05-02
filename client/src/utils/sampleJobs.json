@@ -1,0 +1,29 @@
+[
+    {
+      "id": 1,
+      "title": "Garbage Collector (Rider)",
+      "company": "Sam's Sanitation",
+      "location": "Marion, OH",
+      "description": "This is a full-time role for a rider at Sam's Sanitation...",
+      "shortDesc": "Experience in waste management is a plus...",
+      "type": "Full-time",
+      "posted": "12 days ago",
+      "source": "Indeed",
+      "experience": "Entry level",
+      "salary": "19"
+    },
+    {
+      "id": 2,
+      "title": "Cleaning Position Available",
+      "company": "Reliance Contractors",
+      "location": "Sandy, OR",
+      "description": "Clean and sanitize restrooms...",
+      "shortDesc": "Notify management of any damage...",
+      "type": "Part-time",
+      "posted": "9 days ago",
+      "source": "Indeed",
+      "experience": "1+ years",
+      "salary": "23"
+    }
+  ]
+  
