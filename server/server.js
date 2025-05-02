@@ -7,7 +7,7 @@ const cors = require("cors");
 // Allowlisted frontend origins 
 const allowedOrigins = [
   "http://localhost:3000",             
-  "https://your-frontend.vercel.app"     
+  "https://job-listing-app-pearl.vercel.app/"     
 ];
 
 // CORS configuration
