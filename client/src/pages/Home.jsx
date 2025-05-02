@@ -11,12 +11,13 @@ const Home = () => {
     const [selectedJob, setSelectedJob] = useState(null);
     const [location, setLocation] = useState("");
     const [loading, setLoading] = useState(false);
+    const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:5000/api/v1/jobs";
 
     useEffect(() => {
         const fetchJobs = async () => {
             setLoading(true);
             try {
-                const res = await axios.get("http://localhost:5000/api/v1/jobs/getAllJobs");
+                const res = await axios.get(`${API_BASE_URL}/getAllJobs`);
                 const jobData = res?.data?.jobs || [];
                 setJobs(jobData);
                 setFilteredJobs(jobData);
@@ -35,8 +36,7 @@ const Home = () => {
         if (!loc) return setFilteredJobs(jobs);
         setLoading(true);
         try {
-            const res = await axios.get(
-                `http://localhost:5000/api/v1/jobs/getJobsByLocation?location=${encodeURIComponent(loc)}`
+            const res = await axios.get(`${API_BASE_URL}/getJobsByLocation?location=${encodeURIComponent(loc)}`
             );
             const locationJobs = res?.data?.jobs || [];
             setFilteredJobs(locationJobs);
