@@ -4,7 +4,6 @@ import { FiMapPin } from "react-icons/fi";
 import { ImSpinner2 } from "react-icons/im";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 const Home = () => {
     const [jobs, setJobs] = useState([]);
@@ -12,12 +11,15 @@ const Home = () => {
     const [selectedJob, setSelectedJob] = useState(null);
     const [location, setLocation] = useState("");
     const [loading, setLoading] = useState(false);
+    
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
     useEffect(() => {
         const fetchJobs = async () => {
             setLoading(true);
+            console.log("API_BASE_URL:", API_BASE_URL);
             try {
-                const res = await axios.get(`${API_BASE_URL}/getAllJobs`);
+                const res = await axios.get(`${API_BASE_URL}/api/v1/jobs/getAllJobs`);
                 const jobData = res?.data?.jobs || [];
                 setJobs(jobData);
                 setFilteredJobs(jobData);
@@ -36,7 +38,7 @@ const Home = () => {
         if (!loc) return setFilteredJobs(jobs);
         setLoading(true);
         try {
-            const res = await axios.get(`${API_BASE_URL}/getJobsByLocation?location=${encodeURIComponent(loc)}`
+            const res = await axios.get(`${API_BASE_URL}/api/v1/jobs/getJobsByLocation?location=${encodeURIComponent(loc)}`
             );
             const locationJobs = res?.data?.jobs || [];
             setFilteredJobs(locationJobs);
