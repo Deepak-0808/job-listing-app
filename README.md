@@ -86,6 +86,15 @@ MONGO_URL=your_mongodb_connection_string
 npm start
 ```
 
+### Initial Data Import
+
+- After setting up the project and MongoDB connection, run the following command **once** to import job listings from the JSON file into your database:
+
+```bash
+node server/data/importJobs.js
+
+```
+
 ### 3. Setup and run the frontend
 
 ```bash
