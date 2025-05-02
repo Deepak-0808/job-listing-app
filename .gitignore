@@ -26,6 +26,7 @@ yarn-error.log*
 
 # environment variables
 .env
-/server/.env
-/client/.env
+# In root .gitignore file
+client/.env
+server/.env
 /.env.development

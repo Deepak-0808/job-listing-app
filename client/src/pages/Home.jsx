@@ -4,6 +4,7 @@ import { FiMapPin } from "react-icons/fi";
 import { ImSpinner2 } from "react-icons/im";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+const API_BASE_URL = process.env.API_BASE_URL;
 
 const Home = () => {
     const [jobs, setJobs] = useState([]);
@@ -11,7 +12,6 @@ const Home = () => {
     const [selectedJob, setSelectedJob] = useState(null);
     const [location, setLocation] = useState("");
     const [loading, setLoading] = useState(false);
-    const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:5000/api/v1/jobs";
 
     useEffect(() => {
         const fetchJobs = async () => {
